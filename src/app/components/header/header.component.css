@@ -20,9 +20,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #e69292;
+    color: #c9b4a9;
     border: none;
-    background-color: #ffffff;
+    background-color: #ffedf0;
     padding: 5px 10px;
     border-radius: 50px;
     cursor: pointer; 
