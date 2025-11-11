@@ -1,0 +1,84 @@
+.header-container {
+    position: relative; 
+    z-index: 1; 
+}
+
+.background-image {
+
+    display: block; 
+    height: 200px;
+    width: 100%;
+    position: relative; 
+    z-index: 0; 
+}
+
+.title {
+    
+    position: absolute; 
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: default;
+    z-index: 10; 
+    background-color: transparent;
+}
+.title h1{
+  justify-content: center;
+  font-size: 100px;
+  font-family: Arial, sans-serif;
+}
+
+
+.badges {
+    display: flex;
+    gap: 15px;
+    
+}
+.badge a {
+    text-decoration: none;         
+    color: #490909;                 
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: inline-block; 
+}
+.badge:hover a {
+    color: #ffffff;               
+}
+
+.badge #S
+{
+    background-color: #D8E2DC;
+    border: 2px solid #ffffff;
+    border-radius: 30px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.badge #R
+{
+    background-color: #FFE5D9;
+    border: 2px solid #ffffff;
+    border-radius: 30px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.badge #L
+{
+    background-color: #F4ACB7;
+    border: 2px solid #ffffff;
+    border-radius: 30px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.badge #C
+{
+    background-color: #9D8189;
+    border: 2px solid #ffffff;
+    border-radius: 30px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
