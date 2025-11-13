@@ -1,3 +1,15 @@
 *{
     margin: 0;
 }
+@font-face {
+    font-family: 'Big Scratch Brush';
+    src: url('assets/fonts/BigScratchBrush.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  .indie-flower-regular {
+    font-family: "Indie Flower", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
