@@ -2,8 +2,8 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
-import { RegrasComponent } from './pages/regras/regras.component';
 import { ShopComponent } from './pages/shop/shop.component';
+import { ComunidadeComponent } from './pages/comunidade/comunidade.component';
 
 
 export const routes: Routes = [
@@ -21,11 +21,11 @@ export const routes: Routes = [
   }
   ,
   {
-    path: 'Regras', component: RegrasComponent
+    path: 'Loja', component: ShopComponent
   }
   ,
   {
-    path: 'Loja', component: ShopComponent
+    path: 'Comunidade', component: ComunidadeComponent
   }
   
 ];
