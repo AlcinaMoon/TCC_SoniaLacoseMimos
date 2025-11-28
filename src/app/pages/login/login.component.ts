@@ -1,11 +1,22 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
-  imports: [],
+  standalone: true,
+  imports: [FormsModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
+  nickname: string = '';
+  password: string = '';
 
+  login() {
+    if (this.nickname === 'Alcina' && this.password === '123456') {
+      alert('Login realizado com sucesso!');
+    } else {
+      alert('Nickname ou senha incorretos!');
+    }
+  }
 }

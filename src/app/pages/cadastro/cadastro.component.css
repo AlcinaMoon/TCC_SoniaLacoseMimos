@@ -1,12 +1,11 @@
-.login-container {
-    height: 100vh;
+.cadastro-container {
+    height: 90vh;
     display: flex;
-    align-items: center;
     justify-content: center;
-    background: #f2f2f2;
+    align-items: center;
   }
   
-  .login-card {
+  .cadastro-card {
     width: 320px;
     padding: 30px;
     background: white;
@@ -15,9 +14,8 @@
   }
   
   h2 {
-    margin-bottom: 20px;
     text-align: center;
-    font-weight: 600;
+    margin-bottom: 20px;
   }
   
   .input-group {
@@ -26,31 +24,17 @@
     flex-direction: column;
   }
   
-  label {
-    margin-bottom: 6px;
-    font-size: 14px;
-    color: #444;
-  }
-  
   input {
     padding: 10px;
     border-radius: 6px;
     border: 1px solid #ccc;
-    font-size: 14px;
   }
   
   .login-button {
     width: 100%;
     padding: 10px;
     border: none;
-    border-radius: 6px;
     background: #0066ff;
-    color: white;
-    font-size: 15px;
-    cursor: pointer;
-    transition: 0.2s ease;
-  }
-  
-  .login-button:hover {
-    background: #004ecc;
+    color: #fff;
+    border-radius: 6px;
   }

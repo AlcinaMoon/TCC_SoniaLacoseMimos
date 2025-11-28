@@ -1,1 +1,35 @@
-<p>login works!</p>
+<div class="login-container">
+  <div class="login-card">
+    <h2>Entrar</h2>
+
+    <form (ngSubmit)="login()">
+
+      <div class="input-group">
+        <label for="nick">Nickname</label>
+        <input
+          id="nick"
+          type="text"
+          [(ngModel)]="nickname"
+          name="nickname"
+          required
+        />
+      </div>
+
+      <div class="input-group">
+        <label for="password">Senha</label>
+        <input
+          id="password"
+          type="password"
+          [(ngModel)]="password"
+          name="password"
+          required
+        />
+      </div>
+
+      <button type="submit" class="login-button">Entrar</button>
+
+    </form>
+
+    <a routerLink="/cadastro" class="link-cadastro">Criar conta</a>
+  </div>
+</div>
