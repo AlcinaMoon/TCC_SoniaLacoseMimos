@@ -1,2 +1,10 @@
-<p>comunidade works!</p>
-<app-login></app-login>
+@if (!loggedIn) {
+  <app-login (loginSuccess)="onLoginSuccess()"></app-login>
+}
+
+@if (loggedIn) {
+  <div class="comunidade-content">
+    <h1>Bem-vinda à Comunidade, Alcina 🌟</h1>
+    <p>Agora o conteúdo aparece!</p>
+  </div>
+}

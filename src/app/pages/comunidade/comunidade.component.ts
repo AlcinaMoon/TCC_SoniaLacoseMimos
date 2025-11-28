@@ -1,12 +1,18 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-comunidade',
-  imports: [LoginComponent],
+  standalone: true,
+  imports: [CommonModule, LoginComponent],
   templateUrl: './comunidade.component.html',
-  styleUrl: './comunidade.component.css'
+  styleUrls: ['./comunidade.component.css']
 })
 export class ComunidadeComponent {
+  loggedIn = false;
 
+  onLoginSuccess() {
+    this.loggedIn = true;
+  }
 }

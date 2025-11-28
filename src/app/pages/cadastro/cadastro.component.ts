@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';  // ← ADICIONE ESTA LINHA
 
 @Component({
   selector: 'app-cadastro',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],  // ← ADICIONE RouterLink AQUI
   templateUrl: './cadastro.component.html',
   styleUrls: ['./cadastro.component.css'],
 })

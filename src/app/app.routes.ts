@@ -4,6 +4,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ShopComponent } from './pages/shop/shop.component';
 import { ComunidadeComponent } from './pages/comunidade/comunidade.component';
+import { LoginComponent } from './pages/login/login.component';
 
 
 export const routes: Routes = [
@@ -26,6 +27,10 @@ export const routes: Routes = [
   ,
   {
     path: 'Comunidade', component: ComunidadeComponent
+  }
+  ,
+  {
+    path: "Login", component: LoginComponent
   }
   
 ];

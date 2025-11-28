@@ -1,22 +1,19 @@
+
 :host {
   display: flex;
-  justify-content: center;   /* centro horizontal */
-  align-items: center;       /* centro vertical */
-  height: 100vh;             /* ocupa a tela inteira */
-  background-image: url(../../../../public/Background.png);
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;  /* ← mudei para min-height */
+  background-image: url(/Background.png);  /* ← CAMINHO CORRETO */
   background-size: cover;
   background-repeat: no-repeat;
 }
-  .postFixo
-  {
-    display: flex;
-    width: 94%;
-    height: 780px;
-    background-color: rgb(255, 255, 255, 0.7);
-    justify-content: center;
-    border-radius: 30px;
-    
-  }
 
-
-/*cor legal pra talvez mais tarde: rgb(236, 206, 206)*/
+.postFixo {
+  display: flex;
+  width: 94%;
+  height: 780px;
+  background-color: rgba(255, 255, 255, 0.7);  /* ← corrigi a sintaxe do rgba */
+  justify-content: center;
+  border-radius: 30px;
+}
