@@ -2,9 +2,17 @@
   display: block;
   background-color: #F4ACB7;
   width: 100%;
-  min-height: 90vh;  /* ← Só mudei height para min-height */
+  min-height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.comunidade-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
 
 /* Estilos para quando estiver logado */

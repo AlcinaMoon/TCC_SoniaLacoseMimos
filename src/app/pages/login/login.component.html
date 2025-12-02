@@ -1,35 +1,22 @@
-<div class="login-container">
-  <div class="login-card">
-    <h2>Entrar</h2>
+<div class="login-card">
+  <h2>Faça login para comentar</h2>
 
-    <form (ngSubmit)="login()">
+  <form (ngSubmit)="login()">
 
-      <div class="input-group">
-        <label for="nick">Nickname</label>
-        <input
-          id="nick"
-          type="text"
-          [(ngModel)]="nickname"
-          name="nickname"
-          required
-        />
-      </div>
+    <div class="input-group">
+      <input
+        id="nick"
+        type="text"
+        [(ngModel)]="nickname"
+        name="nickname"
+        placeholder="Digite seu nome"
+        required
+      />
+    </div>
 
-      <div class="input-group">
-        <label for="password">Senha</label>
-        <input
-          id="password"
-          type="password"
-          [(ngModel)]="password"
-          name="password"
-          required
-        />
-      </div>
+    <button type="submit" class="login-button">Entrar</button>
 
-      <button type="submit" class="login-button">Entrar</button>
+  </form>
 
-    </form>
-
-    <a routerLink="/cadastro" class="link-cadastro">Criar conta</a>
-  </div>
+  <p class="footer-text">© 2025 Sônia Laços e Mimos • Feito à mão com carinho</p>
 </div>
