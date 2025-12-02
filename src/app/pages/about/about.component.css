@@ -1,8 +1,37 @@
 :host {
-    display: block;
-    background-color: #D8E2DC;
-    width: 100%;
-    height: 90vh; 
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url('/Background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  margin: 0;
+  padding-top: 0;
+}
+
+.sobre-container {
+  background: #D8E2DC;
+  width: 90%;
+  height: 85vh;
+  margin: 0;
+  margin-left: 40px;
+  padding: 40px 50px;
+  border-radius: 12px;
+  font-family: 'Indie Flower', cursive;
+  color: #3b3b3b;
+}
+
+.sobre-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: normal;
+  color: #3b3b3b;
+}
+
+.sobre-container p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #5a7d7c;
+}
