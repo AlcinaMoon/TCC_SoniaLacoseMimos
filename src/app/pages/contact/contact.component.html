@@ -1,1 +1,15 @@
-<p>contact works!</p>
+<div class="card-conteudo" style="background-color: #9C828B; color: #ffffff;">
+    <h2 class="titulo-grande">Fale Comigo</h2>
+    <p class="desc">Dúvidas? Parcerias? Mande um alô!</p>
+    
+    <!-- O #formRef ajuda a limpar o form depois -->
+    <form (submit)="enviarMensagem($event)" #formRef>
+        <input type="text" class="input-field" placeholder="Seu Nome" required>
+        <textarea class="input-field" style="height: 120px; resize: vertical;" placeholder="Sua Mensagem" required></textarea>
+        <button class="btn-enviar">Enviar</button>
+    </form>
+
+    <div style="margin-top: auto; text-align: center; opacity: 0.5; padding-top: 2rem; font-size: 0.8rem;">
+        © 2025 Sônia Laços • Feito com amor
+    </div>
+</div>

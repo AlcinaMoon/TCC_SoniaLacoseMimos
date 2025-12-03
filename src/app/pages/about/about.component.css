@@ -1,37 +1,28 @@
 :host {
-  display: block;
-  width: 100%;
-  min-height: 100vh;
-  background-image: url('/Background.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
-  margin: 0;
-  padding-top: 0;
+    /* MUDOU AQUI: Agora vai até a linha 5 (cobrindo a coluna 4/Rosa Escuro) */
+    grid-column: 1 / 5 !important; 
+    
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-left: 2rem;
 }
 
-.sobre-container {
-  background: #D8E2DC;
-  width: 90%;
-  height: 85vh;
-  margin: 0;
-  margin-left: 40px;
-  padding: 40px 50px;
-  border-radius: 12px;
-  font-family: 'Indie Flower', cursive;
-  color: #3b3b3b;
+.titulo-grande { 
+    font-family: var(--font-hand); 
+    font-size: 3.8rem; 
+    margin-bottom: 1.5rem; 
+    text-align: center; 
 }
 
-.sobre-container h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  font-weight: normal;
-  color: #3b3b3b;
+.desc { 
+    text-align: center; 
+    font-size: 1.2rem; 
+    max-width: 700px; 
+    margin: 0 auto; 
+    line-height: 1.6; 
 }
 
-.sobre-container p {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  margin-bottom: 20px;
-  color: #5a7d7c;
+@media(max-width: 1024px){
+    .titulo-grande { font-size: 2.8rem; }
 }

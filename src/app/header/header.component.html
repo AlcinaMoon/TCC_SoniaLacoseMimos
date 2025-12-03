@@ -1,0 +1,35 @@
+<header>
+    <div class="mobile-bar">
+        <a routerLink="/home" class="logo-mobile">Sônia Laços</a>
+        <button class="btn-mobile-menu" (click)="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+
+    <div class="mobile-dropdown" [class.hidden]="!mobileMenuAberto">
+        <a routerLink="/sobre" class="mobile-nav-btn" (click)="toggleMenu()">Sobre <span class="indicator" style="background:var(--color-sobre)"></span></a>
+        <a routerLink="/loja" class="mobile-nav-btn" (click)="toggleMenu()">Loja <span class="indicator" style="background:var(--color-loja)"></span></a>
+        <a routerLink="/home" class="mobile-nav-btn" (click)="toggleMenu()">Login <span class="indicator" style="background:var(--color-home)"></span></a>
+        <a routerLink="/comunidade" class="mobile-nav-btn" (click)="toggleMenu()">Comunidade <span class="indicator" style="background:var(--color-comunidade)"></span></a>
+        <a routerLink="/contato" class="mobile-nav-btn" (click)="toggleMenu()">Contato <span class="indicator" style="background:var(--color-contato)"></span></a>
+    </div>
+
+    <nav class="desktop-nav">
+        <a routerLink="/sobre" routerLinkActive="active" class="nav-btn btn-sobre">Sobre</a>
+        <a routerLink="/loja" routerLinkActive="active" class="nav-btn btn-loja">Loja</a>
+        
+        <a routerLink="/home" class="logo-central-wrapper">
+            <div class="logo-card">
+                <div class="logo-border"></div>
+                <div class="logo-bg"></div>
+                <div class="logo-content">
+                    <div class="logo-line-1">Sônia</div>
+                    <div class="logo-line-2">Laços</div>
+                </div>
+            </div>
+        </a>
+        
+        <a routerLink="/comunidade" routerLinkActive="active" class="nav-btn btn-comunidade">Comunidade</a>
+        <a routerLink="/contato" routerLinkActive="active" class="nav-btn btn-contato">Contato</a>
+    </nav>
+</header>

@@ -1,16 +1,77 @@
-*{
-    margin: 0;
-    padding: 0px;
-}
-@font-face {
-    font-family: 'Big Scratch Brush';
-    src: url('assets/fonts/BigScratchBrush.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
+/* src/styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Quicksand:wght@400;600;700&display=swap');
 
-  .indie-flower-regular {
-    font-family: "Indie Flower", cursive;
-    font-weight: 400;
-    font-style: normal;
-  }
+:root {
+    /* DEFINIÇÕES DE CORES E FONTES OBRIGATÓRIAS */
+    --font-hand: 'Amatic SC', cursive;
+    --font-body: 'Quicksand', sans-serif;
+    
+    --color-sobre: #DDECE9;
+    --color-loja: #FFEBE0;
+    --color-home: #FFDCE5;
+    --color-comunidade: #F7B2BE;
+    --color-contato: #9C828B;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { 
+    font-family: var(--font-body); 
+    overflow-x: hidden; /* Evita rolagem lateral indesejada */
+}
+
+.hidden { display: none !important; }
+
+/* Classes utilitárias */
+.titulo-grande { font-family: var(--font-hand); font-size: 3.8rem; text-align: center; }
+.desc { text-align: center; font-size: 1.2rem; }
+
+/* === ESTRUTURA DO GRID PRINCIPAL === */
+
+main {
+    flex-grow: 1;
+    display: grid;
+    /* Cria 5 colunas iguais, espelhando o fundo listrado */
+    grid-template-columns: repeat(5, 1fr);
+    width: 100%;
+    padding: 2rem 0;
+    position: relative;
+}
+
+/* Regra padrão para todas as páginas */
+main > * {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    /* IMPORTANTE: Não defino grid-column fixo aqui para não travar os outros */
+}
+
+/* === A MÁGICA DO POSICIONAMENTO (Aqui que o filho chora e a mãe não vê) === */
+/* Essas regras empurram cada página para sua cor correta */
+
+/* Sobre: Fica na esquerda (Colunas 1, 2 e 3) */
+app-sobre {
+    grid-column: 1 / 4; 
+    padding-left: 2rem; /* Afasta um pouco da borda da tela */
+}
+
+/* Loja: Pega quase tudo, mas focado na esquerda */
+app-loja {
+    grid-column: 1 / 5;
+}
+
+/* Home: Centralizadão (Padrão) */
+app-home {
+    grid-column: 2 / 5;
+}
+
+/* Comunidade: Puxa para a direita */
+app-comunidade {
+    grid-column: 2 / 6;
+}
+
+/* Contato: Fica na direita (Colunas 3, 4 e 5) */
+app-contato {
+    grid-column: 3 / 6;
+    padding-right: 2rem; /* Afasta da borda direita */
+}

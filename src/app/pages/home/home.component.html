@@ -1,4 +1,88 @@
-<div class="postFixo">
-    <p>espaço reservado pro carrossel abaixo</p>
-    <app-carousel></app-carousel> <!--Essa disgrama branca-->
+<div class="card-conteudo" style="background-color: #FFDCE5; color: #881337;">
+                
+    <!-- ESTADO 1: NÃO LOGADO -->
+    <div id="area-login" *ngIf="!usuarioLogado">
+        <h2 class="titulo-grande">Área da Cliente</h2>
+        <p class="desc">Faça login para acessar ofertas exclusivas e nosso mural de recadinhos!</p>
+        
+        <div class="login-wrapper">
+            <!-- Botões de Alternância (Abas) -->
+            <div class="toggle-btn-group">
+                <button 
+                    class="toggle-btn" 
+                    [class.active]="!exibirCadastro" 
+                    (click)="toggleForm('entrar')">
+                    Entrar
+                </button>
+                <button 
+                    class="toggle-btn" 
+                    [class.active]="exibirCadastro" 
+                    (click)="toggleForm('cadastrar')">
+                    Cadastrar
+                </button>
+            </div>
+
+            <!-- Formulário de Login -->
+            <form *ngIf="!exibirCadastro" (submit)="realizarLogin()">
+                <input type="email" class="input-field" placeholder="E-mail" required value="cliente@sonialacos.com">
+                <input type="password" class="input-field" placeholder="Senha" required value="123456">
+                <button class="btn-enviar">Acessar Minha Conta</button>
+            </form>
+
+            <!-- Formulário de Cadastro -->
+            <form *ngIf="exibirCadastro" (submit)="realizarLogin()">
+                <input type="text" class="input-field" placeholder="Nome Completo" required>
+                <input type="email" class="input-field" placeholder="E-mail" required>
+                <input type="password" class="input-field" placeholder="Criar Senha" required>
+                <button class="btn-enviar">Criar Conta Grátis</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ESTADO 2: LOGADO (FEED) -->
+    <div id="area-feed" *ngIf="usuarioLogado">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+            <h2 class="titulo-grande" style="font-size: 2.5rem; margin:0;">Feed de Mimos</h2>
+            <button (click)="sair()" style="background:none; border:none; cursor:pointer; color:#be185d; font-weight:bold; font-family: var(--font-body);">
+                <i class="fas fa-sign-out-alt"></i> Sair
+            </button>
+        </div>
+        
+        <div class="feed-container">
+            <!-- Criador de Post -->
+            <div class="post-creator">
+                <div style="display:flex; gap: 10px; margin-bottom: 10px;">
+                    <div class="avatar"><i class="fas fa-user"></i></div>
+                    <strong style="align-self:center; color:#881337;">Você</strong>
+                </div>
+                
+                <!-- O ngModel conecta essa caixa de texto com a variável no TypeScript -->
+                <textarea 
+                    [(ngModel)]="novoPostTexto" 
+                    class="post-input" 
+                    rows="3" 
+                    placeholder="O que você está achando dos nossos laços?">
+                </textarea>
+                
+                <button class="post-btn" (click)="criarPost()">Publicar</button>
+                <div style="clear:both;"></div>
+            </div>
+
+            <!-- Lista de Posts (Gerada pelo *ngFor) -->
+            <div class="feed-list">
+                <div class="post-card" *ngFor="let post of posts">
+                    <div class="avatar"><i class="{{ post.avatarIcon }}"></i></div>
+                    <div>
+                        <h4 style="margin-bottom: 5px; color:#881337;">{{ post.nome }}</h4>
+                        <p style="font-size: 0.95rem;">{{ post.texto }}</p>
+                        <small style="opacity:0.6; font-size:0.8rem;">{{ post.tempo }}</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top: auto; text-align: center; opacity: 0.5; padding-top: 2rem; font-size: 0.8rem;">
+        © 2025 Sônia Laços • Feito com amor
+    </div>
 </div>

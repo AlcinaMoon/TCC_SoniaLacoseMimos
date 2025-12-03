@@ -1,0 +1,25 @@
+.fundo-listrado {
+    position: fixed; inset: 0; z-index: -1;
+    display: grid; grid-template-columns: repeat(5, 1fr);
+    pointer-events: none;
+}
+.faixa { height: 100%; border-right: 1px solid rgba(0,0,0,0.03); }
+.faixa-sobre { background-color: var(--color-sobre); }
+.faixa-loja { background-color: var(--color-loja); }
+.faixa-home { background-color: var(--color-home); }
+.faixa-comunidade { background-color: var(--color-comunidade); }
+.faixa-contato { background-color: var(--color-contato); }
+
+.app-wrapper {
+    position: relative; z-index: 10; min-height: 100vh;
+    display: flex; flex-direction: column;
+}
+
+/* AQUI ESTAVA O VILÃO!
+   Removemos o "display: flex" daqui para deixar o styles.css comandar o Grid.
+   Deixamos apenas o padding básico.
+*/
+main { 
+    /* flex-grow: 1; display: flex; justify-content: center; <--- APAGADO */
+    padding: 1rem 2rem 3rem; 
+}

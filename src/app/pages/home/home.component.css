@@ -1,19 +1,32 @@
-
 :host {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;  
-  background-image: url(/Background.png); 
-  background-size: cover;
-  background-repeat: no-repeat;
+    /* Home: Centralizada (Colunas 2, 3 e 4) */
+    grid-column: 2 / 5 !important;
+    
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
-.postFixo {
-  display: flex;
-  width: 94%;
-  height: 780px;
-  background-color: rgba(255, 255, 255, 0.7); 
-  justify-content: center;
-  border-radius: 30px;
+@media (max-width: 1024px) {
+    :host { padding-left: 1rem; padding-right: 1rem; grid-column: 1 / -1 !important; }
 }
+
+/* ... Mantenha o resto do seu CSS (login-wrapper, etc) abaixo ... */
+.login-wrapper{ max-width:400px; margin:0 auto; background:rgba(255,255,255,0.6); padding:2.5rem; border-radius:30px; box-shadow:0 10px 30px rgba(0,0,0,0.05); text-align:center; }
+
+.input-field{ width:100%; padding:1rem; border-radius:15px; margin-bottom:1rem; border:none; background:white; }
+
+.toggle-btn-group{ display:flex; justify-content:center; gap:1rem; margin-bottom:1.5rem; }
+.toggle-btn{ padding:0.8rem 2rem; border-radius:20px; background:white; border:none; cursor:pointer; font-weight:bold; opacity:0.8; }
+.toggle-btn.active{ background:#f472b6; color:white; opacity:1; }
+
+.btn-enviar{ width:100%; padding:1rem; border-radius:30px; background:#be185d; color:white; border:none; cursor:pointer; font-weight:700; }
+
+/* Feed */
+.feed-container{ max-width:700px; margin:0 auto; }
+.post-creator{ background:white; padding:1.5rem; border-radius:20px; box-shadow:0 5px 15px rgba(0,0,0,0.05); margin-bottom:2rem; }
+.post-input{ width:100%; border:none; background:#fdf2f8; padding:1rem; border-radius:15px; resize:none; }
+.post-btn{ background:#be185d; color:white; border:none; padding:.8rem 2rem; border-radius:50px; font-weight:700; cursor:pointer; float:right; }
+
+.post-card{ background:white; padding:1.3rem; border-radius:18px; display:flex; gap:1rem; margin-bottom:1.2rem; box-shadow:0 3px 10px rgba(0,0,0,0.05); }
+.avatar{ width:48px; height:48px; border-radius:50%; background:#fce7f3; display:flex; align-items:center; justify-content:center; font-size:1.2rem; color:#9d174d; }
