@@ -1,6 +1,4 @@
-/* =========================================
-   VARIÁVEIS E RESET GLOBAL
-   ========================================= */
+
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Quicksand:wght@400;600;700&display=swap');
 
 :root {
@@ -24,12 +22,10 @@ body {
     color: #4a5568;
 }
 
-/* Utilitários Globais */
+
 .hidden { display: none !important; }
 
-/* =========================================
-   FUNDO LISTRADO (Fixo no fundo)
-   ========================================= */
+
 .fundo-listrado {
     position: fixed; inset: 0; z-index: -1;
     display: grid; grid-template-columns: repeat(5, 1fr);
@@ -42,7 +38,7 @@ body {
 .faixa-comunidade { background-color: var(--color-comunidade); }
 .faixa-contato { background-color: var(--color-contato); }
 
-/* Layout base para o Angular */
+
 .app-wrapper {
     position: relative; 
     z-index: 10;
@@ -51,11 +47,11 @@ body {
     flex-direction: column;
 }
 
-/* ADICIONA ISSO NO FINAL: */
+
 main {
     flex-grow: 1;
     display: flex;
-    justify-content: center; /* Centraliza o card na tela */
-    padding: 1rem 2rem 3rem; /* Espaço nas laterais */
+    justify-content: center; 
+    padding: 1rem 2rem 3rem; 
     width: 100%;
 }

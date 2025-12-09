@@ -2,24 +2,22 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 2rem 0; /* Garante o respiro em cima e embaixo */
+    padding: 2rem 0; 
 }
 
 .card-conteudo {
-    width: 90%; /* Ocupa 90% da tela, deixando as laterais livres */
-    max-width: 1250px; /* Limite aumentado pra ficar show em telas grandes (era 1100px) */
+    width: 90%; 
+    max-width: 1250px;
     min-height: 500px;
     
-    border-radius: 50px; /* Mantém a curva suave */
-    padding: 2.5rem; /*enxugada no padding (era 3.5rem) */
+    border-radius: 50px; 
+    padding: 2.5rem; 
     
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Centraliza o conteúdo verticalmente */
+    justify-content: center; 
     position: relative;
-    
-    /* Mantém sem sombra e com a cor original */
     box-shadow: none !important; 
     background-color: #DDECE9;   
     color: #134e4a;
@@ -27,7 +25,7 @@
 
 .titulo-grande { 
     font-family: var(--font-hand); 
-    font-size: 3.2rem; /* Ajustei pra 3.2rem pra ficar igual ao do contato */
+    font-size: 3.2rem; 
     margin-bottom: 2rem; 
     text-align: center;
     line-height: 1;
@@ -58,13 +56,13 @@
     font-weight: 600;
 }
 
-/* Responsividade */
+
 @media(max-width: 1024px){
     .card-conteudo {
         padding: 2rem;
         border-radius: 30px;
         min-height: auto;
-        width: 95%; /* No tablet aproveita um pouco mais de espaço */
+        width: 95%; 
     }
     .titulo-grande { font-size: 2.8rem; }
     .desc { font-size: 1.1rem; }

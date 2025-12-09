@@ -2,11 +2,10 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 2rem 0; /* Igualzinho ao gabarito */
+    padding: 2rem 0; 
 }
 
 .card-conteudo {
-    /* --- CÓPIA FIEL DO GABARITO (SOBRE) --- */
     width: 90%;
     max-width: 1250px;
     min-height: 500px;
@@ -16,10 +15,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Centraliza verticalmente igual ao Sobre */
+    justify-content: center; 
     position: relative;
-
-    /* --- CORES DO CONTATO --- */
     background-color: #9C828B; 
     color: #ffffff;
     box-shadow: none !important;
@@ -27,7 +24,7 @@
 
 .titulo-grande { 
     font-family: var(--font-hand); 
-    font-size: 3.2rem; /* Igual ao gabarito (era 3.8rem) */
+    font-size: 3.2rem; 
     margin-bottom: 1rem; 
     text-align: center; 
     line-height: 1;
@@ -40,8 +37,7 @@
     opacity: 0.9; 
 }
 
-/* ================= FORMULÁRIO ================= */
-/* O formulário mantém o tamanho dele, centralizado no card grandão */
+
 .form-contato {
     width: 100%;
     max-width: 600px; 
@@ -101,7 +97,6 @@
     font-size: 0.9rem;
 }
 
-/* --- RESPONSIVIDADE IDÊNTICA AO GABARITO --- */
 @media(max-width: 1024px){
     .card-conteudo {
         padding: 2rem;

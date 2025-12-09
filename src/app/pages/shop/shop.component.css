@@ -15,7 +15,7 @@
     align-items: center;
     position: relative;
     
-    /* Cores da Loja (Pêssego) e Estilo FLAT (Sem sombra) */
+  
     background-color: #FFEBE0; 
     color: #9a3412;
     box-shadow: none !important;
@@ -36,39 +36,37 @@
     opacity: 0.8; 
 }
 
-/* ================= CARROSSEL ================= */
+
 .carousel-wrapper {
     width: 100%;
     position: relative;
     display: flex;
     align-items: center;
-    /* Um padding negativo ou ajuste de margem se quiser que as setas fiquem pra fora */
+   
 }
 
 .carousel-track {
     display: flex;
     gap: 2rem;
-    overflow-x: auto; /* Permite rolar horizontalmente */
+    overflow-x: auto; 
     scroll-behavior: smooth;
     padding: 1rem 0.5rem;
     width: 100%;
-    
-    /* Esconde barra de rolagem */
     -ms-overflow-style: none;  
     scrollbar-width: none;  
 }
 .carousel-track::-webkit-scrollbar { display: none; }
 
-/* Item do Produto */
+
 .produto-item {
-    min-width: 260px; /* Tamanho fixo pra não esmagar */
-    background: rgba(255,255,255,0.5); /* Fundo branquinho transparente */
+    min-width: 260px; 
+    background: rgba(255,255,255,0.5); 
     padding: 2rem;
     border-radius: 30px;
     text-align: center;
     border: 2px solid rgba(255,255,255,0.3);
     transition: transform 0.3s;
-    flex-shrink: 0; /* IMPEDE O ITEM DE ENCOLHER */
+    flex-shrink: 0; 
 }
 
 .produto-item:hover {
@@ -113,7 +111,7 @@ h3 {
     transform: scale(1.05); 
 }
 
-/* Botões de Navegação (< e >) */
+
 .nav-btn {
     background: rgba(255,255,255,0.6);
     border: none;
@@ -144,9 +142,9 @@ h3 {
     font-size: 0.8rem; 
 }
 
-/* Mobile Adjusts */
+
 @media(max-width: 768px){
-    .nav-btn { display: none; /* No celular usa o dedo */ }
+    .nav-btn { display: none; }
     .card-conteudo { padding: 2rem 1rem; border-radius: 30px; }
     .produto-item { min-width: 220px; } 
 }

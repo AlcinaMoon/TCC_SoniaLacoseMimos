@@ -9,10 +9,10 @@ import { Component } from '@angular/core';
 export class ContactComponent {
 
   enviarMensagem(event: Event) {
-    event.preventDefault(); // Impede a página de recarregar
+    event.preventDefault(); 
     alert('Mensagem enviada com sucesso! Em breve a Sônia responde.');
     
-    // Limpa o formulário (Typecast simples para HTMLFormElement)
+    
     const form = event.target as HTMLFormElement;
     form.reset();
   }

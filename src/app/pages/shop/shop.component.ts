@@ -4,15 +4,15 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-shop',
   standalone: true,
-  imports: [CommonModule], // Importante para o loop funcionar
+  imports: [CommonModule], 
   templateUrl: './shop.component.html',
   styleUrls: ['./shop.component.css']
 })
 export class ShopComponent {
-  // Pega a referência da "trilha" do carrossel no HTML
+  
   @ViewChild('carouselTrack') carouselTrack!: ElementRef;
 
-  // Lista de Produtos para o Carrossel
+  
   produtos = [
     { nome: 'Tiara Princesa', icon: 'fa-crown', preco: 'R$ 25,00' },
     { nome: 'Laço Boutique', icon: 'fa-ribbon', preco: 'R$ 18,00' },
@@ -22,11 +22,10 @@ export class ShopComponent {
     { nome: 'Presilha Flor', icon: 'fa-spa', preco: 'R$ 12,00' }
   ];
 
-  // Função para mover o carrossel
+  
   scroll(direction: 'left' | 'right') {
     const track = this.carouselTrack.nativeElement;
-    const scrollAmount = 320; // Quantidade de pixels que roda por clique
-
+    const scrollAmount = 320; 
     if (direction === 'left') {
       track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
     } else {

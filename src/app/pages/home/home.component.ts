@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core'; // Adicionei OnInit pra carregar os dados ao iniciar
+import { Component, OnInit } from '@angular/core'; 
 import { CommonModule } from '@angular/common'; 
 import { FormsModule } from '@angular/forms'; 
 
-// Interface para tipar o Post 
+
 interface Post {
   nome: string;
   texto: string;

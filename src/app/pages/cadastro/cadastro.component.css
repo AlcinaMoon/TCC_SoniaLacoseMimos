@@ -1,5 +1,5 @@
 .cadastro-container {
-  min-height: 90vh;  /* ← mudei de height para min-height */
+  min-height: 90vh;  
   display: flex;
   justify-content: center;
   align-items: center;
