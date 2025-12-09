@@ -1,3 +1,107 @@
-.social-icons{ display:flex; justify-content:center; gap:2rem; margin:2rem 0; }
-.icon-circle{ width:80px; height:80px; border-radius:50%; background:white; display:flex; align-items:center; justify-content:center; font-size:2rem; box-shadow:0 5px 15px rgba(0,0,0,0.1); }
-.btn-insta{ padding:1rem 2.5rem; background:#c13584; color:white; border:none; border-radius:30px; cursor:pointer; font-weight:bold; }
+/* Container principal do componente */
+:host {
+    display: block;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 2rem 3rem; /* Espaçamento externo */
+}
+
+/* O Card Rosa */
+.card-conteudo {
+    width: 100%;
+    max-width: 1100px; /* Limite largura no desktop */
+    min-height: 600px;
+    border-radius: 50px;
+    padding: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    /* Cores já definidas inline no HTML, mas poderiam vir pra cá */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* Textos */
+.titulo-grande {
+    font-family: var(--font-hand);
+    font-size: 3.8rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+    line-height: 1;
+    text-align: center;
+}
+
+.desc {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    opacity: 0.85;
+    margin: 0 auto 1.5rem auto;
+    max-width: 800px;
+    text-align: center;
+}
+
+/* Ícones Sociais */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.icon-circle {
+    width: 80px; height: 80px;
+    background: rgba(255,255,255,0.35);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2.2rem;
+    color: inherit;
+    border: 4px solid rgba(255,255,255,0.25);
+    transition: 0.3s;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.icon-circle:hover {
+    transform: scale(1.1) rotate(5deg);
+    background: rgba(255,255,255,0.5);
+}
+
+/* O tal do ícone desalinhado (Whatsapp) */
+.translate-y { transform: translateY(20px); }
+.translate-y:hover { transform: translateY(20px) scale(1.1) rotate(-5deg); }
+
+/* Botão Instagram */
+.btn-insta {
+    padding: 1rem 3rem;
+    background: rgba(255,255,255,0.4);
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    color: inherit; /* Pega a cor do pai (vinho) */
+}
+
+.btn-insta:hover {
+    background: rgba(255,255,255,0.7);
+    transform: scale(1.05);
+}
+
+/* ================= Mobile Ajustes ================= */
+@media (max-width: 1024px) {
+    .card-conteudo {
+        padding: 2rem;
+        border-radius: 30px;
+        min-height: auto;
+    }
+    .titulo-grande { font-size: 2.8rem; }
+}
+
+@media (max-width: 640px) {
+    :host { padding: 1rem; }
+    .icon-circle { width: 60px; height: 60px; font-size: 1.8rem; }
+    .social-icons { gap: 1rem; }
+}

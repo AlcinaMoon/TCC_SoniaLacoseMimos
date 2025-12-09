@@ -1,32 +1,98 @@
 :host {
-    /* Home: Centralizada (Colunas 2, 3 e 4) */
-    grid-column: 2 / 5 !important;
-    
+    grid-column: 1 / -1 !important; /* Mantém centralizado */
+    width: 100%;
     display: flex;
     justify-content: center;
-    width: 100%;
 }
 
-@media (max-width: 1024px) {
-    :host { padding-left: 1rem; padding-right: 1rem; grid-column: 1 / -1 !important; }
+.card-conteudo {
+    width: 100%; max-width: 1100px; min-height: 500px;
+    border-radius: 50px; padding: 3.5rem;
+    display: flex; flex-direction: column; align-items: center;
+    position: relative;
+    background-color: #FFDCE5; 
+    color: #881337;
+    box-shadow: none !important;
 }
 
-/* ... Mantenha o resto do seu CSS (login-wrapper, etc) abaixo ... */
-.login-wrapper{ max-width:400px; margin:0 auto; background:rgba(255,255,255,0.6); padding:2.5rem; border-radius:30px; box-shadow:0 10px 30px rgba(0,0,0,0.05); text-align:center; }
+.titulo-grande { font-family: var(--font-hand); font-size: 3.8rem; margin-bottom: 1rem; text-align: center; line-height: 1; }
+.desc { text-align: center; font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9; }
 
-.input-field{ width:100%; padding:1rem; border-radius:15px; margin-bottom:1rem; border:none; background:white; }
-
-.toggle-btn-group{ display:flex; justify-content:center; gap:1rem; margin-bottom:1.5rem; }
-.toggle-btn{ padding:0.8rem 2rem; border-radius:20px; background:white; border:none; cursor:pointer; font-weight:bold; opacity:0.8; }
-.toggle-btn.active{ background:#f472b6; color:white; opacity:1; }
-
-.btn-enviar{ width:100%; padding:1rem; border-radius:30px; background:#be185d; color:white; border:none; cursor:pointer; font-weight:700; }
+/* Login */
+.login-wrapper {
+    width: 100%; max-width: 400px;
+    background: rgba(255,255,255,0.4);
+    padding: 2.5rem; border-radius: 30px;
+    text-align: center; border: 2px solid rgba(255,255,255,0.3);
+    margin: 0 auto;
+}
+.toggle-btn-group { display: flex; background: rgba(255,255,255,0.5); border-radius: 50px; padding: 5px; margin-bottom: 2rem; }
+.toggle-btn { flex: 1; border: none; background: transparent; padding: 10px; border-radius: 50px; cursor: pointer; font-weight: bold; font-family: var(--font-body); color: #881337; transition: 0.3s; }
+.toggle-btn.active { background: white; color: #be185d; }
+.input-field { width: 100%; padding: 1rem; border-radius: 15px; border: 1px solid rgba(255,255,255,0.5); background: rgba(255,255,255,0.7); margin-bottom: 1rem; font-family: inherit; outline: none; }
+.input-field:focus { background: white; }
+.btn-enviar { width: 100%; padding: 1rem; border-radius: 15px; border: none; background: #be185d; color: white; font-weight: bold; cursor: pointer; transition: 0.3s; }
+.btn-enviar:hover { transform: scale(1.02); background: #9d174d; }
 
 /* Feed */
-.feed-container{ max-width:700px; margin:0 auto; }
-.post-creator{ background:white; padding:1.5rem; border-radius:20px; box-shadow:0 5px 15px rgba(0,0,0,0.05); margin-bottom:2rem; }
-.post-input{ width:100%; border:none; background:#fdf2f8; padding:1rem; border-radius:15px; resize:none; }
-.post-btn{ background:#be185d; color:white; border:none; padding:.8rem 2rem; border-radius:50px; font-weight:700; cursor:pointer; float:right; }
+.feed-header { width: 100%; max-width: 700px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
+.btn-sair { background:none; border:none; cursor:pointer; color:#be185d; font-weight:bold; font-size: 1rem; display: flex; gap: 5px; align-items: center; }
+.feed-container { width: 100%; max-width: 700px; }
 
-.post-card{ background:white; padding:1.3rem; border-radius:18px; display:flex; gap:1rem; margin-bottom:1.2rem; box-shadow:0 3px 10px rgba(0,0,0,0.05); }
-.avatar{ width:48px; height:48px; border-radius:50%; background:#fce7f3; display:flex; align-items:center; justify-content:center; font-size:1.2rem; color:#9d174d; }
+/* Criador de Post */
+.post-creator {
+    background: rgba(255,255,255,0.5); padding: 1.5rem; border-radius: 20px;
+    margin-bottom: 2rem; border: 1px solid rgba(255,255,255,0.3);
+}
+.user-info { display: flex; gap: 10px; margin-bottom: 10px; align-items: center; }
+.post-input { width: 100%; border: none; background: rgba(255,255,255,0.6); padding: 1rem; border-radius: 15px; resize: none; font-family: inherit; margin-bottom: 1rem; outline: none; }
+.post-input:focus { background: white; }
+
+/* Barra de Ações do Post (Botão câmera + Publicar) */
+.post-actions {
+    display: flex; justify-content: space-between; align-items: center; margin-top: 0.5rem;
+}
+.btn-icon {
+    background: transparent; border: none; font-size: 1.5rem; color: #be185d;
+    cursor: pointer; padding: 5px; transition: transform 0.2s;
+}
+.btn-icon:hover { transform: scale(1.2); }
+.post-btn { background: #be185d; color: white; border: none; padding: 0.8rem 2rem; border-radius: 50px; font-weight: bold; cursor: pointer; }
+
+/* Preview da Imagem no Criador */
+.image-preview-container {
+    position: relative; margin-bottom: 1rem; display: inline-block;
+}
+.preview-img { max-height: 200px; border-radius: 15px; border: 2px solid white; }
+.btn-remove-img {
+    position: absolute; top: -10px; right: -10px; background: #be185d; color: white;
+    border: none; border-radius: 50%; width: 25px; height: 25px; cursor: pointer;
+    font-weight: bold; display: flex; align-items: center; justify-content: center;
+}
+
+/* Post Card List */
+.feed-list { display: flex; flex-direction: column; gap: 1rem; clear: both; }
+.post-card {
+    background: rgba(255,255,255,0.8); padding: 1.5rem; border-radius: 20px;
+    display: flex; gap: 1rem; animation: slideDown 0.4s ease;
+}
+.avatar { width: 50px; height: 50px; background: #fbcfe8; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #be185d; flex-shrink: 0; }
+
+/* Imagem dentro do Post Publicado */
+.post-image-container { margin-top: 10px; margin-bottom: 10px; }
+.post-img-content { max-width: 100%; border-radius: 15px; max-height: 400px; object-fit: cover; }
+
+.footer-text { 
+    margin-top: auto; 
+    opacity: 0.5; 
+    padding-top: 3rem; 
+    font-size: 0.8rem; }
+    
+@keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+.fade-in { animation: slideDown 0.5s ease; }
+
+@media(max-width: 768px){
+    .card-conteudo { padding: 2rem 1rem; border-radius: 30px; }
+    .titulo-grande { font-size: 2.5rem; }
+    .feed-header { flex-direction: column; gap: 1rem; }
+}
