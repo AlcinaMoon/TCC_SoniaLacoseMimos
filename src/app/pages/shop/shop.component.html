@@ -12,13 +12,15 @@
             
             @for (item of produtos; track item.nome) {
                 <div class="produto-item">
-                    <div class="icon-box">
-                        <i class="fas {{item.icon}}"></i>
-                    </div>
-                    <h3>{{item.nome}}</h3>
-                    <p class="preco">{{item.preco}}</p>
-                    <button class="btn-produto">Comprar</button>
-                </div>
+    
+             <div class="img-box">
+                <img [src]="item.imagem" alt="{{item.nome}}">
+             </div>
+
+            <h3>{{item.nome}}</h3>
+             <p class="preco">{{item.preco}}</p>
+            <button class="btn-produto">Comprar</button>
+            </div>
             }
 
         </div>
