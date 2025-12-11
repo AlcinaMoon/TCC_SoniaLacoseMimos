@@ -6,7 +6,7 @@ import { CommunityComponent } from './pages/community/community.component';
 import { ContactComponent } from './pages/contact/contact.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'sobre', pathMatch: 'full' },
+  { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'sobre', component: AboutComponent },
   { path: 'loja', component: ShopComponent },
   { path: 'home', component: HomeComponent },
