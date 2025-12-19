@@ -106,3 +106,14 @@
     }
     .titulo-grande { font-size: 2.8rem; }
 }
+
+.lgpd-notice {
+    font-size: 0.75rem;       /* Fonte bem pequenininha */
+    margin-top: 1.5rem;       /* Espaço para respirar do botão de cima */
+    opacity: 0.6;             /* Deixa o texto meio "apagado" (minimalista) */
+    line-height: 1.4;         /* Altura da linha para ficar legível */
+    color: #ffffff;           /* Mantém a cor da marca */
+    max-width: 90%;           /* não encosta nas bordas */
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -8,7 +8,7 @@
 .card-conteudo {
     width: 90%; 
     max-width: 1250px;
-    min-height: 500px;
+    min-height: 500px; /* Garante que o card não mude muito de tamanho */
     
     border-radius: 50px; 
     padding: 2.5rem; 
@@ -16,22 +16,32 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; 
+    justify-content: flex-start; 
     position: relative;
     box-shadow: none !important; 
     background-color: #DDECE9;   
     color: #134e4a;
 }
 
+/* Animação suave ao trocar o texto */
+.animate-fade {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 .titulo-grande { 
-    font-family: var(--font-hand); 
+    font-family: var(--font-hand, cursive);
     font-size: 3.2rem; 
     margin-bottom: 2rem; 
     text-align: center;
     line-height: 1;
 }
 
-.desc { 
+.desc, .texto-legal { 
     text-align: center; 
     font-size: 1.4rem; 
     max-width: 900px; 
@@ -40,11 +50,23 @@
     font-weight: 500;
 }
 
+.texto-legal p {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+/* --- ESTRELA (com espaço) --- */
+.star-container {
+    text-align: center; 
+    margin-top: 3rem;      /* Espaço de cima */
+    margin-bottom: 3.5rem; /* Espaço de baixo para não colar na linha */
+}
+
 .star-icon {
     font-size: 3rem;
     color: #115e59;
     opacity: 0.7;
-    animation: spin 10s infinite linear;
+    /* Animation removida para parar de girar */
 }
 
 .footer-text {
@@ -56,6 +78,100 @@
     font-weight: 600;
 }
 
+/* --- SEÇÃO DOS LINKS LEGAIS --- */
+
+.about-legal {
+    text-align: center;
+    padding-top: 40px;
+    margin-top: auto; 
+    border-top: 1px solid rgba(19, 78, 74, 0.2);
+    width: 100%;
+    max-width: 800px;
+}
+
+.about-legal h2 {
+    font-family: 'Anton', sans-serif;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+}
+
+.about-legal .legal-links {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+/* Estilo do Link */
+.about-legal .legal-links a {
+    color: #115e59; 
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    position: relative;
+    padding-bottom: 5px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* A Mágica da Animação da Barra */
+.about-legal .legal-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px; 
+    background-color: #115e59; 
+    transform: scaleX(0); 
+    transform-origin: right;
+    transition: transform 0.3s ease-out;
+}
+
+.about-legal .legal-links a:hover::after,
+.about-legal .legal-links a.active::after {
+    transform: scaleX(1); 
+    transform-origin: left;
+}
+
+.about-legal .legal-links a:hover {
+    color: #0d4a46; 
+}
+
+/* --- BOTÃO MINIMALISTA --- */
+.btn-voltar {
+    background: transparent;
+    border: none;
+    padding: 0;
+    
+    /* Estilo do texto/ícone */
+    color: #115e59;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    
+    /* Espaçamento e Posicionamento */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; 
+    
+    margin-top: 1.5rem;   
+    margin-bottom: 3.5rem; /* Margem para não colar na linha */
+    
+    /* Efeito visual */
+    opacity: 0.6; 
+    transition: all 0.3s ease;
+}
+
+.btn-voltar:hover {
+    background: transparent; 
+    color: #0d4a46;
+    opacity: 1; 
+    transform: translateX(-5px); 
+}
 
 @media(max-width: 1024px){
     .card-conteudo {
@@ -64,6 +180,6 @@
         min-height: auto;
         width: 95%; 
     }
-    .titulo-grande { font-size: 2.8rem; }
+    .titulo-grande { font-size: 2.5rem; }
     .desc { font-size: 1.1rem; }
 }

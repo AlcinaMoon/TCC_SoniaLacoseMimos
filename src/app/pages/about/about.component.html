@@ -1,13 +1,50 @@
 <div class="card-conteudo">
-    <h2 class="titulo-grande">Sobre a Sônia</h2>
     
-    <p class="desc">
-        Com 60 anos Sônia de Santana, após a aposentadoria, descobriu novamente seu amor por artesanato e começou a confecção de adereços para cabelo. Inicialmente, suas vendas eram feitas de ouvido a ouvido, apenas para amigas ou ex-colegas de trabalho, e só após muito incentivo ela criou um Instragam para a divulgação de seus produtos, a qual ela nomeou como Sônia Laços a Mimos. 
-    </p>
-    
-    <div style="text-align:center; margin-top: 3rem;">
-        <i class="fas fa-star star-icon"></i>
-    </div>
+    @if (secaoAtiva === 'sobre') {
+        <h2 class="titulo-grande">Sobre a Sônia</h2>
+        
+        <p class="desc animate-fade">
+            Com 60 anos Sônia de Santana, após a aposentadoria, descobriu novamente seu amor por artesanato e começou a confecção de adereços para cabelo. Inicialmente, suas vendas eram feitas de ouvido a ouvido, apenas para amigas ou ex-colegas de trabalho, e só após muito incentivo ela criou um Instragam para a divulgação de seus produtos, a qual ela nomeou como Sônia Laços a Mimos. 
+        </p>
+        
+        <div class="star-container animate-fade">
+            <i class="fas fa-star star-icon"></i>
+        </div>
+    }
+
+    @if (secaoAtiva === 'termos') {
+        <h2 class="titulo-grande">Termos de Uso</h2>
+        <div class="texto-legal animate-fade">
+            <p><strong>1. Aceitação:</strong> Ao acessar o site Sônia Laços e Mimos, você concorda com estes termos de serviço.</p>
+            <p><strong>2. Produtos:</strong> Nossos produtos são artesanais. Pequenas variações de cor e tamanho podem ocorrer.</p>
+            <p><strong>3. Entregas:</strong> O prazo de entrega varia de acordo com a região e a disponibilidade do produto.</p>
+            
+            <button class="btn-voltar" (click)="mudarSecao('sobre')">
+                <i class="fas fa-arrow-left"></i> Voltar para Sobre
+            </button>
+        </div>
+    }
+
+    @if (secaoAtiva === 'privacidade') {
+        <h2 class="titulo-grande">Privacidade</h2>
+        <div class="texto-legal animate-fade">
+            <p><strong>1. Coleta de Dados:</strong> Nós respeitamos a sua privacidade. Coletamos apenas os dados necessários para o envio.</p>
+            <p><strong>2. Segurança:</strong> Seus dados não serão vendidos ou compartilhados com terceiros.</p>
+            <p><strong>3. Contato:</strong> Para dúvidas sobre seus dados, entre em contato pelo nosso Instagram.</p>
+
+            <button class="btn-voltar" (click)="mudarSecao('sobre')">
+                <i class="fas fa-arrow-left"></i> Voltar para Sobre
+            </button>
+        </div>
+    }
+
+    <section class="about-legal">
+        <h2>Informações Importantes</h2>
+        <div class="legal-links">
+            <a (click)="mudarSecao('termos')" [class.active]="secaoAtiva === 'termos'">Termos de Uso</a>
+            <a (click)="mudarSecao('privacidade')" [class.active]="secaoAtiva === 'privacidade'">Política de Privacidade</a>
+        </div>
+    </section>
 
     <div class="footer-text">
         © 2025 Sônia Laços • Feito com amor
